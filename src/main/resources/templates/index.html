@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+body {margin: 60px; }
+h2   {color: red; font-family: "Impact"; text-align:left; font-size: 30px; }
+p    {color: red;}
+form {width: 200px; color: black; }
+label {font-weight:bold;}
+</style>
+    
+    
+    
+    <title th:text="${title}">TITLE</title>
+</head>
+
+<body>
+
+<h1 th:text="${title}">TITLE</h1>
+
+<br/>
+
+<a href="/currencyConversion">New currency conversion</a>
+
+<br/>
+
+<table border="1" 
+           width="500">
+&nbsp; 
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Origin Currency</th>
+        <th>Amount Origin</th>
+        <th>Target Currency</th>
+        <th>Amount Target</th>
+        <th>Date Conversion</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="conversion: ${conversions}">
+        <td th:text="${conversion.id}">ID</td>
+        <td th:text="${conversion.originCurrency}"></td>
+        <td th:text="${conversion.originValue}"></td>
+        <td th:text="${conversion.targetCurrency}"></td>
+        <td th:text="${conversion.targetValue}"></td>
+        <td th:text="${conversion.converterDate}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/conversions">Conversions</a>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
